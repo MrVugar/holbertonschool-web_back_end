@@ -2,7 +2,7 @@
 import Currency from './3-currency';
 
 export default class Pricing {
-  constructor(amount = 0, currency) {
+  constructor(amount, currency = null) {
     this.amount = amount;
     this.currency = currency;
   }
@@ -11,7 +11,7 @@ export default class Pricing {
     return `${this.amount} ${this.currency.name} (${this.currency.code})`;
   }
 
-  static convertPrice(amount = 0, conversionRate = 0) {
+  static convertPrice(amount, conversionRate) {
     if (typeof amount !== 'number') {
       throw new TypeError('amount must be a number');
     }
